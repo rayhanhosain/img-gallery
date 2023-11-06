@@ -112,12 +112,13 @@ function Image() {
   return (
     <>
       <>
+        {/* top part  */}
         <div className="top-part">
           {selectedImage.length > 0 && (
             <>
               <div>{selectedImage.length} Images Selected</div>
               <button className="dlt-button" onClick={deleteSelectedImage}>
-                Delete Images
+                Delete Image
               </button>
             </>
           )}
@@ -125,6 +126,7 @@ function Image() {
         </div>
       </>
 
+      {/* this is the images container */}
       <div className="image-grid" onDragOver={dragOver}>
         {image.map((img) => (
           <img
@@ -141,6 +143,7 @@ function Image() {
           />
         ))}
 
+        {/* button to add image */}
         <button className="add-image-button" className="add-image-button">
           Add Image
           <input type="file" accept="image/*" onChange={addImage} />{" "}

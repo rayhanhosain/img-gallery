@@ -6,6 +6,7 @@ function Image() {
   let [image, setImage] = useState([]);
   let [selectedImage, setSelectedImage] = useState([]);
 
+  //I tried to use useEffect to save the images, but they did not work properly
   useEffect(() => {
     let savedImage = localStorage.getItem("galleryImage");
     if (savedImage) {
@@ -17,10 +18,12 @@ function Image() {
     localStorage.setItem("galleryImage", JSON.stringify(image));
   }, [image]);
 
+  //adding a class after starting dragging
   function dragStart(e) {
     e.target.classList.add("the-dragging-element");
   }
 
+  //removing the class after the ending of dragging
   function dragEnd(e) {
     e.target.classList.remove("the-dragging-element");
   }
@@ -108,7 +111,9 @@ function Image() {
           {selectedImage.length > 0 && (
             <>
               <div>{selectedImage.length} Images Selected</div>
-              <button onClick={deleteSelectedImage}>Delete Images</button>
+              <button className="dlt-button" onClick={deleteSelectedImage}>
+                Delete Images
+              </button>
             </>
           )}
           {selectedImage.length === 0 && <h2>Image Gallery</h2>}
@@ -131,7 +136,7 @@ function Image() {
           />
         ))}
 
-        <button className="add-image-button">
+        <button className="add-image-button" className="add-image-button">
           Add Image
           <input type="file" accept="image/*" onChange={addImage} />{" "}
         </button>

@@ -47,3 +47,13 @@ body {
     border-radius: 10%;
     border-color: rgb(119, 139, 123);
   }
+
+  .dlt-button {
+    background-color: red;
+    border-color: red;
+    padding: 10px;
+    border-radius: 10%;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+  }

@@ -6,7 +6,7 @@ function Image() {
   let [image, setImage] = useState([]);
   let [selectedImage, setSelectedImage] = useState([]);
 
-  //I tried to use useEffect to save the images, but they did not work properly
+  //I tried to use useEffect to save the images
   useEffect(() => {
     let savedImage = localStorage.getItem("galleryImage");
     if (savedImage) {
@@ -28,6 +28,7 @@ function Image() {
     e.target.classList.remove("the-dragging-element");
   }
 
+  //this is to add image from local storage
   function addImage(event) {
     let selectedImage = event.target.files[0];
     if (selectedImage) {
@@ -41,6 +42,7 @@ function Image() {
     }
   }
 
+  //this is to add the dragged element before its nearest element in the x axis
   function dragOver(e) {
     e.preventDefault();
     let theDraggingImage = document.querySelector(".the-dragging-element");
@@ -58,6 +60,7 @@ function Image() {
     }
   }
 
+  //this is to find out the nearest element from the mouse cursor in the x axis
   function gettingImmediatelyAfterElement(imageContainer, xAxisPosition) {
     let elementsExceptTheDraggingImage = [
       ...imageContainer.querySelectorAll(".image:not(.the-dragging-element)"),
@@ -89,6 +92,7 @@ function Image() {
     );
   }
 
+  //this is to select/unselect images
   function toggleImageSelection(id) {
     if (selectedImage.includes(id)) {
       setSelectedImage(selectedImage.filter((imgId) => imgId !== id));
@@ -97,6 +101,7 @@ function Image() {
     }
   }
 
+  //this is to delete selected images
   function deleteSelectedImage() {
     let updatedImage = image.filter((img) => !selectedImage.includes(img.id));
 

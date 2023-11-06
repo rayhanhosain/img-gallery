@@ -31,7 +31,17 @@ body {
 .the-dragging-element {
     opacity: 40%;
 }
-
+.selected {
+    opacity: 20%
+}
 .image:hover{
-    opacity: 40%; /* You can adjust the scaling factor to control the darkness effect. */
+    opacity: 80%; /* You can adjust the scaling factor to control the darkness effect. */
+  }
+
+  .add-image-button {
+    padding: 10px;
+    font-size: 30px;
+    background-color: aquamarine;
+    border-radius: 10%;
+    border-color: black;
   }

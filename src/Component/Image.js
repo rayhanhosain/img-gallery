@@ -1,21 +1,21 @@
 import React from "react";
 import "./Image.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Image() {
   let [image, setImage] = useState([]);
   let [selectedImage, setSelectedImage] = useState([]);
 
-  //   useEffect(() => {
-  //     let savedImage = localStorage.getItem("galleryImage");
-  //     if (savedImage) {
-  //       setImage(JSON.parse(savedImage));
-  //     }
-  //   }, []);
+  useEffect(() => {
+    let savedImage = localStorage.getItem("galleryImage");
+    if (savedImage) {
+      setImage(JSON.parse(savedImage));
+    }
+  }, []);
 
-  //   useEffect(() => {
-  //     localStorage.setItem("galleryImage", JSON.stringify(image));
-  //   }, [image]);
+  useEffect(() => {
+    localStorage.setItem("galleryImage", JSON.stringify(image));
+  }, [image]);
 
   function dragStart(e) {
     e.target.classList.add("the-dragging-element");

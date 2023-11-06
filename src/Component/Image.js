@@ -66,10 +66,11 @@ function Image() {
       ...imageContainer.querySelectorAll(".image:not(.the-dragging-element)"),
     ];
 
+    //to get an object of offset and the element
     return elementsExceptTheDraggingImage.reduce(
       (immediateOne, element) => {
         let immediateElementsDetail = element.getBoundingClientRect();
-
+        //offset from the nearest element
         let offsetFromTheDraggingElement =
           xAxisPosition -
           immediateElementsDetail.left -

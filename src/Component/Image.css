@@ -30,6 +30,7 @@ body {
 
 .the-dragging-element {
     opacity: 40%;
+    user-select: contain;
 }
 .selected {
     opacity: 20%
@@ -46,6 +47,8 @@ body {
     background-color: rgb(178, 244, 203);
     border-radius: 10%;
     border-color: rgb(119, 139, 123);
+    height: 80%;
+    width: 70%;
   }
 
   .dlt-button {
@@ -61,5 +64,6 @@ body {
   .top-part {
     display: flex;
     justify-content: space-between;
-    padding: 10px 25px 10px 25px;
+    padding: 10px 10% 5px 10%;
+    border-bottom: 1px solid rgb(82, 81, 81);
   }

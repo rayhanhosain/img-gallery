@@ -117,13 +117,14 @@ function Image() {
         <div className="top-part">
           {selectedImage.length > 0 && (
             <>
-              <div>{selectedImage.length} Images Selected</div>
+              <h3>{selectedImage.length} Images Selected</h3>
+
               <button className="dlt-button" onClick={deleteSelectedImage}>
                 Delete Image
               </button>
             </>
           )}
-          {selectedImage.length === 0 && <h2>Image Gallery</h2>}
+          {selectedImage.length === 0 && <h3>Image Gallery</h3>}
         </div>
       </>
 

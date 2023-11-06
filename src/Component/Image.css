@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(107, 114, 110);
+    background-color: rgb(204, 224, 213);
     border: 30px;
 }
 
@@ -40,8 +40,10 @@ body {
 
   .add-image-button {
     padding: 10px;
+    color: rgb(10, 51, 68);
     font-size: 30px;
-    background-color: aquamarine;
+    font-weight: bold;
+    background-color: rgb(178, 244, 203);
     border-radius: 10%;
-    border-color: black;
+    border-color: rgb(119, 139, 123);
   }
